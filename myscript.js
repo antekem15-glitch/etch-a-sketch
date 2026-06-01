@@ -1,25 +1,27 @@
-
-
-
 function gridMaker(num) {
     const grid = document.getElementById("container")
-    
     let count = document.getElementById("container").children.length;
+    const gap=4;
+    const containerWidth = 624;
+    const boxSize= (containerWidth - gap*num) / num;
     
-    while (count < 256) {
+
+    grid.style.width = "624px";
+    grid.innerHTML = "";
+    
+    while (count < num*num) {
         const newBox = document.createElement("div");
+        
         newBox.style.border = "2px solid black"
-        newBox.style.width = "35px";
-        newBox.style.height = "35px";
+        newBox.style.width = boxSize + "px";
+        newBox.style.height = boxSize + "px";
         newBox.style.margin = "0 0px";
         grid.appendChild(newBox)
-        count = document.getElementById("container").children.length;
+        count++;
         newBox.classList.add("pixel")
-        
+       
 
     }
-
-
 
 }
 function getRandomColor() {
@@ -38,7 +40,21 @@ document.getElementById("container").addEventListener("mouseover", function(even
 
 }});
 
-gridMaker()
+gridMaker(16)
 
+const button = document.querySelector("button").addEventListener("click", function () {
+   const input = prompt("Enter a number between 1 and 100", 16);
+   if (!input) return;
 
+    const size = Number(input);
+    const grid = document.getElementById("container")
+    let count = document.getElementById("container").children.length;
 
+  while (count > 0) {
+    grid.removeChild(grid.lastChild)
+    --count;
+  }
+  
+  gridMaker(size)
+        
+    });
