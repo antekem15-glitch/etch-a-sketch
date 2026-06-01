@@ -1,18 +1,18 @@
 function gridMaker(num) {
     const grid = document.getElementById("container")
     let count = document.getElementById("container").children.length;
-    const gap=2;
+    const gap=0;
     const containerWidth = 624;
     const boxSize= (containerWidth - gap*num) / num;
     
 
     grid.style.width = containerWidth + "px";
-    grid.innerHTML = "";
+    
     
     while (count < num*num) {
         const newBox = document.createElement("div");
         
-        newBox.style.border = "1px solid black"
+        newBox.style.border = "0px solid black"
         newBox.style.width = boxSize + "px";
         newBox.style.height = boxSize + "px";
         newBox.style.margin = "0 0px";
@@ -30,10 +30,7 @@ function getRandomColor() {
     const g = Math.floor(Math.random()*256)
     const b = Math.floor(Math.random()*256)
     return `rgb(${r}, ${g}, ${b})`;
-
-
 }
-
 
 document.getElementById("container").addEventListener("mouseover", function(event){
     if (event.target.classList.contains("pixel")) {
@@ -50,7 +47,9 @@ const button = document.querySelector("button").addEventListener("click", functi
     const size = Number(input);
     const grid = document.getElementById("container")
     let count = document.getElementById("container").children.length;
-
+    if (size > 100) { 
+        alert("Keep it below 100") 
+        return;}
   while (count > 0) {
     grid.removeChild(grid.lastChild)
     --count;
