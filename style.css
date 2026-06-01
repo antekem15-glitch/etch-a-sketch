@@ -5,8 +5,9 @@
     display: flex; 
     width: 624px;
     flex-wrap: wrap;
-   
     border: 1px solid black;
+    box-shadow: 0 0 40px gold;
+    border-radius: 10px;
 
 }
 
@@ -17,14 +18,17 @@
     gap: 40px;
     align-items: center;
     justify-content: space-between;
-    
+
 }
 
 .title{
     width: 100%;
-    background-color: rgb(255, 215, 0, 0.3);
-    height: 50px;
-    box-shadow: 0 0 60px gold;
+    
+    border-radius: 50px;
+    height: 20px;
+    box-shadow: 0 0 50px gold,
+    inset 0 0 100px rgb(255, 215, 0, 0.3);
+    
     display: flex;
     justify-content: center;
     align-items: center;
@@ -51,3 +55,68 @@ border-color: rgb(255, 215, 0, 0.3);
     border: 10px solid black;
     
 }
+
+.reset {
+
+padding: 5px 30px;
+font-family: 'Courier New', Courier, monospace;
+font-weight: 900;
+background-color: rgb(43, 42, 42);
+border-radius: 30px;
+border-color: rgba(0, 0, 0, 0.99);
+color: white;
+}
+.reset:hover{
+    box-shadow: 0 0 10px rgb(224, 9, 9);
+    cursor: pointer ;
+}
+
+#buttons{
+    display: flex;
+    gap: 10px;
+    
+   
+   
+}
+.black{
+    background-color: black;
+    border-radius: 50px;
+    width: 28px;
+}
+.red{
+    background-color: red;
+    border-color: red;
+    border-radius: 50px;
+    width: 28px;
+}
+.random{
+    background: linear-gradient(20deg, 
+        #ff0000, /* Rot */
+        #ffa500, /* Orange */
+        #ffff00, /* Gelb */
+        #00ff00, /* Grün */
+        #00ffff, /* Cyan */
+        #0000ff, /* Blau */
+        #8b00ff  /* Violett */
+    );
+    border: none;
+    width: 28px;
+    border-radius: 50px;
+}
+
+.random:hover {
+box-shadow: 0 0 5px blue;
+cursor: pointer;
+}
+
+.black:hover {
+    cursor: pointer ;
+    box-shadow: 0 0 5px black;
+}
+
+.red:hover {
+
+cursor: pointer;
+box-shadow: 0 0 5px red;
+}
+    
