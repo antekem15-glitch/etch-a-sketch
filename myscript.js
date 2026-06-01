@@ -1,21 +1,22 @@
 function gridMaker(num) {
     const grid = document.getElementById("container")
     let count = document.getElementById("container").children.length;
-    const gap=4;
+    const gap=2;
     const containerWidth = 624;
     const boxSize= (containerWidth - gap*num) / num;
     
 
-    grid.style.width = "624px";
+    grid.style.width = containerWidth + "px";
     grid.innerHTML = "";
     
     while (count < num*num) {
         const newBox = document.createElement("div");
         
-        newBox.style.border = "2px solid black"
+        newBox.style.border = "1px solid black"
         newBox.style.width = boxSize + "px";
         newBox.style.height = boxSize + "px";
         newBox.style.margin = "0 0px";
+        newBox.style.borderRadius = "20px";
         grid.appendChild(newBox)
         count++;
         newBox.classList.add("pixel")
